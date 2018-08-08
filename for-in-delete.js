@@ -39,8 +39,14 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
+function showValues(obj) {
   //Code Here
+  var str = '';
+
+  for (var prop in obj) {
+    str = str + obj[prop];
+  }
+  return str;
 }
 
 
@@ -53,7 +59,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10(obj) {
+  for (var prop in obj) {
+    if (obj[prop] > 10) {
+      obj[prop] = 0
+    }
+  }
+  return obj;
+}
 
 
 
@@ -65,7 +78,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj) {
+  for (prop in obj) {
+    obj[prop] *= 2
+  }
+  return obj
+}
 
 
 
@@ -79,9 +97,16 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj) {
+  var e = '';
+  for (props in obj) {
+    if (props.startsWith('sh')) {
 
-
+      e += obj[props]
+    }
+  }
+  return e
+}
 
 /* 
   Sometimes it's needed to delete object properties. 
