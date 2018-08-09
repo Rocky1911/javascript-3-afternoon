@@ -99,15 +99,29 @@ var manager = new Manger("Ted", "Row", "ekeke@mail", 33, 0)
   Call your new class ProgressiveManager
 // */
 
-// class ProgressiveManager {
-//   constructor(first_name, last_name, email, age, reports, title, bonus) {
-//     super(first_name, last_name, email, age, reports);
-//     this.title = 'Not a manager';
-//     this.bonus = 0
-//   }
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age, reports, title, bonus) {
+    super(first_name, last_name, email, age, reports);
+    this.title = 'Not a manager';
+    this.bonus = 0
+  }
 
-
-// }
+  setTitle(emp) {
+    if (emp === 0) {
+      return 'Not a manager';
+    } else if (emp >= 1 && emp <= 3) {
+      return 'Barely Manager';
+    } else if (emp >= 4 && emp <= 10) {
+      return 'Mostly Manager';
+    } else if (emp >= 11 && emp <= 50) {
+      return 'Manager';
+    } else if (emp >= 51 && emp <= 100) {
+      return 'Manager Plus';
+    } else if (emp >= 101) {
+      return 'Bestest Manager';
+    }
+  }
+}
 
 
 
@@ -133,6 +147,28 @@ var manager = new Manger("Ted", "Row", "ekeke@mail", 33, 0)
         - This function returns a function that is called when the machine is done rebooting
         - It should set decrease wear_and_tear_count by 10, and set needs_reboot to false
 */
+class Machine {
+  constructor() {
+    this.widgets_made_count = 0
+    ths.wear_and_tear_count = 0
+    this.needs_reboot = false
+  }
+  makeWidget(num) {
+    this.widgets_made_count += num;
+    if (this.wear_and_tear_count % 50 === 1) {
+      this.wear_and_tear_count += 1
+    }
+  }
+  fixMachine() {
+    this.needs_reboot = true
+  }
+  reboot() {
+    return function () {
+      wear_and_tear_count -= 10;
+      needs_reboot = true
+    }
+  }
+}
 
 
 

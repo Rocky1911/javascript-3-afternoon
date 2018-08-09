@@ -135,10 +135,12 @@ function secrets(obj) {
   Delete the property password and return the object.
 */
 
-//Code Here
-
-
-
+function removePassword(obj) {
+  for (var password in obj) {
+    delete obj.password
+  }
+  return obj
+}
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -154,7 +156,13 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for (var props in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[props] > 100) {
+    delete deleteTheBigNumbers[props]
+  }
+}
+
+
 
 
 
@@ -167,7 +175,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(obj) {
+  for (props in obj) {
+    if (props.startsWith('k')) {
+      delete obj[props]
+    }
+  }
+  return obj
+}
 
 
 
@@ -182,6 +197,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+function hiddenTreasure(obj) {
+  for (var key in obj) {
+    if (!obj[key].includes("treasure")) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 

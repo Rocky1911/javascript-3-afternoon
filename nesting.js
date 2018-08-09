@@ -44,13 +44,25 @@ var employees = [
 // Do not edit the code above.
 
 /*
-  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above and perform the following:
+  Create a function called 'employeeUpdater' that takes no parameters. 
+  employeeUpdater will loop over the array above and perform the following:
     1. If employee's first name is Theo, remove that employee because he just got fired.
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater() {
+  // employees.forEach(function(emp) {
+  // });
+  var remove = employees.filter(function (employee) {
+
+    if (employee.firstName === 'Lorie') {
+      employee.department = 'HR';
+    }
+    return employee.firstName !== 'Theo';
+  });
+  return remove;
+}
 
 
 
@@ -68,6 +80,24 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
+
+function removeDuplicates(dupArr) {
+  //var arr = [];
+  //var dupArr = workplaceAccidents;
+
+  for (let i = 0; i < dupArr.length; i++) {
+    //console.log(dupArr[i]);
+    for (let j = dupArr.length - 1; j > i; j--) {
+      //console.log(dupArr[j]);
+      if (dupArr[i] === dupArr[j]) {
+        dupArr.splice(j, 1);
+      }
+
+    }
+  };
+  return dupArr;
+}
+removeDuplicates(workplaceAccidents);
 //Code Here
 
 
@@ -81,7 +111,8 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
+
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,8 +128,10 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+// var grumpyActivity;
+// var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -138,14 +171,20 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner() {
+  for (var atFaultForAccident in myCar) {
+    if (myCar[atFaultForAccident] = true);
+    myCar[atFaultForAccident] = false
+
+  }
+}
 
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
@@ -157,6 +196,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(numsArr) {
+  for (i = 0; i < numsArr.length; i++); {
+    for (j = 0; j < numsArr.lenght; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+        console.log(numsArr)
+        return even
+      } else {
+        return odd
+      }
+    }
+  }
+  return numsArr
+}
 
 
